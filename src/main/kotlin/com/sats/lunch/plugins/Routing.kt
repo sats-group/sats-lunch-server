@@ -5,6 +5,7 @@ import com.pspdfkit.api.providers.FileDataProvider
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
+import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
@@ -39,8 +40,7 @@ fun Application.configureRouting() {
                 return@withContext bitmapFile
             }
 
-
-            call.respondFile(response)
+            call.respondBytes(response.readBytes(), contentType = ContentType.Image.PNG)
         }
     }
 }
