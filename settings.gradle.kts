@@ -1,0 +1,1 @@
+rootProject.name = "com.sats.lunch.sats-lunch"
