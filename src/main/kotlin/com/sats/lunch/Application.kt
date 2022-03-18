@@ -8,7 +8,7 @@ import com.sats.lunch.plugins.*
 fun main() {
     PSPDFKit.initializeTrial()
 
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
+    embeddedServer(Netty, port = System.getenv("PORT").toIntOrNull() ?: 8080, host = "0.0.0.0") {
         configureRouting()
     }.start(wait = true)
 }
