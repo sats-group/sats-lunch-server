@@ -45,3 +45,7 @@ dependencies {
     // PSPDFKit
     implementation("com.pspdfkit:libraries-java:1.4.1")
 }
+
+tasks.create("stage") {
+    dependsOn("installDist")
+}
